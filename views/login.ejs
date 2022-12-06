@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <title>Serenity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+
+    <p><img src="img/SerenityLogo.PNG"></p>
+    <h1></span> Login</h1>
+ <p>Need an account? <a href="/signup">Signup</a></p>
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <form action="/login" method="post">
+
+        <!-- EMAIL -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" name="password">
+          </div>
+      
+      
+        <!-- BUTTON -->
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="submit">Log In</button>
+        </div>
+
+
+    </form>
+
+    <hr>
+
+   
+    <p>Or go <a href="/">home</a>.</p>
+
+
+</div>
+</div>
+</body>
+</html>
+<!-- <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+        </div> -->   <!-- <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>

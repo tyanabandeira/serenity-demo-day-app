@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Mood Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="progress.css">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
+  <script src="https://kit.fontawesome.com/dc3f67b97d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <section id="sidebar">
+    <section class="title-container">
+      <img class="logo" src="img/Serenity_icon.png" width="40px" alt="logo">
+      <h1>Serenity</h1>
+    </section>
+    <section class="links-container">
+      <div class="links">
+        <div class="icon">
+          <i class="fa-regular fa-clipboard"></i>
+        </div>
+        <span><a href="/moodTracker">Mood Tracker</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <span><a href="/chatHome">Support Chat</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-solid fa-bars-progress"></i>
+        </div>
+        <span><a href="/progress">Progress</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-regular fa-file"></i>
+        </div>
+        <span><a href="/logs">Logs</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+        <span><a href="/logout">Logout</a></span>
+      </div>
+    </section>
+  </section>
+
+  <section id="main-dashboard-content">
+    <h1 id="welcome-title">Check your Progress!</h1>
+    <section id="grid-container">
+      <div>
+        <div>
+          <div class="scatterPlot" id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="pieChart" id="pieChart" style="width:100%; max-width:600px; height:500px;"></div>
+        </div>
+      </div>
+      <div>
+        <div id="barChart" style="width:100%; max-width:600px; height:500px;">
+        </div>
+      </div>
+      <div>
+        <div id="lineChart" style="width:100%; max-width:600px; height:500px;"></div>
+      </div>
+
+
+
+    </section>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="charts.js"></script>
+</body>
+
+</html>

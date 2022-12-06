@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Mood Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/dc3f67b97d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="logs.css">
+</head>
+
+<body>
+
+  <section id="sidebar">
+    <section class="title-container">
+      <img class="logo" src="img/Serenity_icon.png" width="40px" alt="logo">
+      <h1>Serenity</h1>
+    </section>
+    <section class="links-container">
+      <div class="links">
+        <div class="icon">
+          <i class="fa-regular fa-clipboard"></i>
+        </div>
+        <span><a href="/moodTracker">Mood Tracker</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <span><a href="/chatHome">Support Chat</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-solid fa-bars-progress"></i>
+        </div>
+        <span><a href="/progress">Progress</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-regular fa-file"></i>
+        </div>
+        <span><a href="/logs">Logs</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+        <span><a href="/logout">Logout</a></span>
+      </div>
+    </section>
+  </section>
+
+  <section id="main-dashboard-content">
+    <section id="top-section">
+      <div class="input-box">
+        <input placeholder="Search...">
+        <div>
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+      <div class="action-icons">
+        <div class="action-icon-one"></div>
+        <div class="action-icon-two"></div>
+      </div>
+    </section>
+    
+    <h1 id="welcome-title"></h1>
+    <section id="grid-container">
+      <div>
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Sleep</th>
+              <th scope="col">Mood</th>
+              <th scope="col">Trigger</th>
+              <th scope="col">Symptoms</th>
+              <th scope="col">Coping Skill</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i< mood.length; i++) {%>
+              <tr>
+                <th scope="row">
+                  <%= mood[i].date %>
+                </th>
+                <td>
+                  <%= mood[i].time %>
+                </td>
+                <td>
+                  <%= mood[i].hoursOfSleep %>
+                </td>
+                <td>
+                  <%= mood[i].currentMood / 10 %>/10
+                </td>
+                <td>
+                  <%= mood[i].triggers %>
+                </td>
+                <td>
+                  <%= mood[i].symptoms %>
+                </td>
+                <td>
+                  <%= mood[i].copingSkills %>
+                </td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- 
+<div></div>
+    <% for(var i=0; i< mood.length; i++) {%>
+    <tr>
+      <td ><%= mood[i].email %></td>
+      <td ><%= mood[i].date %></td>
+      <td ><%= mood[i].currentMood / 10 %>/10</td>
+      <td >Your mood has changed by <%= i > 0 ? Math.round((mood[i].currentMood /  mood[i - 1].currentMood - 1)* 100 ) : 0 %>%</td>
+    </tr>
+    <% } %>
+  </tbody>
+</table> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

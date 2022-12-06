@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Mood Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="moodTracker.css">
+  <script src="https://kit.fontawesome.com/dc3f67b97d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <section id="sidebar">
+    <section class="title-container">
+      <img class="logo" src="img/Serenity_icon.png" width="40px" alt="logo">
+      <h1>Serenity</h1>
+    </section>
+    <section class="links-container">
+     <!-- <div class="links">
+        <div class="icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <span><a href="/profile">Home</a></span>
+      </div> -->
+      <div class="links">
+        <div class="icon">
+          <i class="fa-regular fa-clipboard"></i>
+        </div>
+        <span><a href="/moodTracker">Mood Tracker</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <span><a href="/chatHome">Support Chat</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-solid fa-bars-progress"></i>
+        </div>
+        <span><a href="/progress">Progress</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-regular fa-file"></i>
+        </div>
+        <span><a href="/logs">Logs</a></span>
+      </div>
+      <div class="links">
+        <div class="icon">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+        <span><a href="/logout">Logout</a></span>
+      </div>
+    </section>
+  </section>
+
+
+  <!-- MAIN DASHBOARD -->
+  <section id="main-dashboard-content">
+    <!-- <section id="top-section">
+      <div class="input-box">
+        <input placeholder="Search...">
+        <div>
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+      <div class="action-icons">
+        <div class="action-icon-one"></div>
+        <div class="action-icon-two"></div>
+      </div>
+    </section> -->
+    <h1 id="welcome-title">Welcome Back, <%= user.email %>!</h1>
+    <h1 id="welcome-title">Log Your Mood!</h1>
+    <section id="grid-container">
+      <div class="grid-item one">
+        <form action="/moodTracker" method="post">
+
+          <div class="dateOfDay">
+            <label for="firstInput" class="form-label">Today's Date</label>
+            <input for="firstInput" type="date" class="form-control" name="date">
+
+          </div>
+
+          <div class="dateOfDay">
+            <label for="secondInput" class="form-label">Time</label>
+            <input for="secondInput" type="time" class="form-control" name="time">
+          </div>
+
+          <div class="dateOfDay">
+            <label for="thirdInput" class="form-label">How many hours of sleep did you get last night?</label>
+            <input for="thirdInput" type="number" class="form-control" name="hoursOfSleep">
+          </div>
+
+
+          <legend class="legendOne">Current Mood</legend>
+
+          <!-- <label for="temp">Choose a comfortable temperature:</label><br /> -->
+          <input type="range" id="moods" name="currentMood" list="tickmarks" />
+
+          <datalist id="tickmarks">
+            <option value="0" label="Not Depressed"></option>
+            <option class="number" value="10" label="1"></option>
+            <option class="number" value="20" label="2"></option>
+            <option class="number" value="30" label="3"></option>
+            <option class="number" value="40" label="4"></option>
+            <option value="50" label="Neutral Mood"></option>
+            <option class="number" value="60" label="6"></option>
+            <option class="number" value="70" label="7"></option>
+            <option class="number" value="80" label="8"></option>
+            <option class="number" value="90" label="9"></option>
+            <option value="100" label="Exrtemely Depressed"></option>
+          </datalist>
+
+
+          <div>
+            <label for="thirdInput" class="form-label">What is triggering you at the moment?</label>
+            <textarea for="thirdInput" class="form-control" name="triggers"></textarea>
+          </div>
+
+
+          <legend class="legendOne">Symptoms</legend>
+          <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" name="symptoms"
+              value="Negative Thoughts">
+            <label class="btn btn-outline-primary" for="btncheck1">Negative Thoughts</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" name="symptoms" value="Crying">
+            <label class="btn btn-outline-primary" for="btncheck2">Crying</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" name="symptoms"
+              value="Difficulty Concentrating">
+            <label class="btn btn-outline-primary" for="btncheck3">Difficulty Concentrating</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" name="symptoms" value="Fatigue">
+            <label class="btn btn-outline-primary" for="btncheck4">Fatigue</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" name="symptoms"
+              value="Social Isolation">
+            <label class="btn btn-outline-primary" for="btncheck5">Social Isolation</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" name="symptoms"
+              value="Sleep Problems">
+            <label class="btn btn-outline-primary" for="btncheck6">Sleep Problems</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" name="symptoms"
+              value="Poor Self-esteem">
+            <label class="btn btn-outline-primary" for="btncheck7">Poor Self-Esteem</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off" name="symptoms"
+              value="Loss of Interest in Actvities">
+            <label class="btn btn-outline-primary" for="btncheck8">Loss of Interest in Actvities</label>
+          </div>
+
+
+          <div>
+            <label for="coping" id="coping" class="form-label">Coping Skills</label>
+            <select class="form-select" name="copingSkills">
+              <option>Journaling</option>
+              <option>Call or text a friend</option>
+              <option>Read</option>
+              <option>Watch TV</option>
+              <option>Meditation</option>
+              <option>15 minute walk</option>
+              <option>Drink tea</option>
+              <option>Yoga</option>
+              <option>Take a hot shower or relaxing bath</option>
+              <option>Draw/Paint</option>
+              <option>Workout</option>
+              <option>Be in nature</option>
+              <option>Listen to music</option>
+              <option>Go for a nice long drive</option>
+              <option>Clean your environment</option>
+              <option>Spend time with a pet</option>
+              <option>Let yourself cry</option>
+              <option>Take a nap</option>
+              <option>Dress up</option>
+              <option>Bake something</option>
+            </select>
+          </div>
+
+          <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="reset">Reset</button>
+          </div>
+
+        </form>
+
+
+
+
+      </div>
+      <!-- <div class="grid-item two">
+          <div class="header">
+          <i class="fa-regular fa-clipboard"></i>
+          <span>Did you log you mood today?</span>
+          </div>
+        </div>
+        <div class="grid-item three">
+          Affirmation of the day
+        </div>
+        <div class="grid-item four">
+          item four
+        </div> -->
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+   
+</body>
+
+</html>
